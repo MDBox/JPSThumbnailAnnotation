@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, JPSThumbnailAnnotationViewState) {
 
 @protocol JPSThumbnailAnnotationViewProtocol <NSObject>
 
+- (void)didSelectAnnotationViewInMap:(MKMapView *)mapView animated:(BOOL)animated;
 - (void)didSelectAnnotationViewInMap:(MKMapView *)mapView;
 - (void)didDeselectAnnotationViewInMap:(MKMapView *)mapView;
 

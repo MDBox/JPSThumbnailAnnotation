@@ -132,6 +132,11 @@ static CGFloat const kJPSThumbnailAnnotationViewAnimationDuration = 0.25f;
 
 #pragma mark - JPSThumbnailAnnotationViewProtocol
 
+-(void)didSelectAnnotationViewInMap:(MKMapView *)mapView animated:(BOOL)animated{
+    if(animated)[mapView setCenterCoordinate:self.coordinate animated:animated];
+    [self expand];
+}
+
 - (void)didSelectAnnotationViewInMap:(MKMapView *)mapView {
     // Center map at annotation point
     [mapView setCenterCoordinate:self.coordinate animated:YES];
