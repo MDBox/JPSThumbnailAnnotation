@@ -33,10 +33,13 @@
 - (MKAnnotationView *)annotationViewInMap:(MKMapView *)mapView {
     if (!self.view) {
         self.view = (JPSThumbnailAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kJPSThumbnailAnnotationViewReuseID];
-        if (!self.view) self.view = [[JPSThumbnailAnnotationView alloc] initWithAnnotation:self];
+        
+        self.view = [[JPSThumbnailAnnotationView alloc] initWithAnnotation:self];
+        
     } else {
         self.view.annotation = self;
     }
+    
     [self updateThumbnail:self.thumbnail animated:NO];
     return self.view;
 }
